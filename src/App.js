@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react';
+import EventPractice from './Event';
 
-const App = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+class MyComponent extends Component {
+  render(){
+    return (
+      <EventPractice/>
+    )
+  }
 }
 
-export default App;
+export default MyComponent;
