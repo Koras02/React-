@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import EventPractice from './Event';
+import Navbar from './components/Navbar';
+import {BrowserRouter,Route,Switch} from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
 
-class MyComponent extends Component {
-  render(){
+class App extends Component {
+  render() {
     return (
-      <EventPractice/>
+      <BrowserRouter>
+       <div className="App">
+         <Navbar />
+         <Switch>
+           <Route exact path="/" component={Home}/>
+           <Route path="/About" component={About}/>
+           <Route path="/contact" component={Contact}/>
+         </Switch>
+       </div>
+      </BrowserRouter>
     )
   }
 }
-
-export default MyComponent;
+export default App;
