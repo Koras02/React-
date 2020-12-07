@@ -14,7 +14,7 @@ export const VideoP1 = styled.div`
   color:red;
   position:absolute;
   left:37%;
-  top:25%;
+  top:12%;
   font:bold 75px/30px arial;
 
   @media screen and (max-width:960px){
