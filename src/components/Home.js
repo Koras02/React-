@@ -15,7 +15,7 @@ class Home extends Component{
             <VideoBg autoPlay loop muted src={Video} type="video/mp4"/>
             <VideoP1>GVA</VideoP1>
             </VideoHeader>
-            <ReactPlayer url="https://youtu.be/D-i9oDLgyAc" autoPlay/>
+            <ReactPlayer url="https://youtu.be/D-i9oDLgyAc" autoPlay/>s
         </div>
      );
    }
