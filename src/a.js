@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "../logo.svg";
 import { Link, animateScroll as scroll } from "react-scroll";
-
+import Video from './video';
 export default class Navbar extends Component {
   scrollToTop = () => {
     scroll.scrollToTop();
@@ -26,6 +26,7 @@ export default class Navbar extends Component {
                 smooth={true}
                 offset={-70}
                 duration={500}
+                video={Video}
               >
                 Section 1
               </Link>

@@ -1,47 +1,20 @@
-import React, { Component } from 'react';
-import logo from "./logo.svg";
-import "./App.css";
-import Navbar from './components/Navbar';
-import Section from "./components/Section";
-import dummyText from './DummyText';
-class App extends Component {
-  render(){
+
+import React from 'react';
+import './App.css';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';  // 
+import Home from './components/Home';
+
+// 웹의 서브페이지 라우팅을 하기위한 js파일이다.이곳에서 path 값으로 서브페이지와 메인페이지를 분리한다.
+function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Section
-        title="Section 1"
-        subtitle={dummyText}
-        dark={true}
-        id="section1"
-        />
-      <Section
-        title="Section 2"
-        subtitle={dummyText}
-        dark={false}
-        id="section2"
-      />
-      <Section 
-        title="Section 3"
-        subtitle={dummyText}
-        dark={true}
-        id="section3"
-      />
-      <Section 
-        title="Section 4"
-        subtitle={dummyText}
-        dark={false}
-        id="section4"
-        />
-      <Section 
-        title="Section 5"
-        subtitle={dummyText}
-        dark={true}
-        id="section5"
-      />
-    </div>
+    <Router>
+      <Switch>
+          <Route path="/" component={Home} exact/>
+          <Route path="About" component={About} exact/>
+      </Switch>
+    </Router>
   );
- }
 }
 
 export default App;
+
