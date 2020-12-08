@@ -1,20 +1,46 @@
-
 import React from 'react';
-import './App.css';
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';  // 
-import Home from './components/Home';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
-// 웹의 서브페이지 라우팅을 하기위한 js파일이다.이곳에서 path 값으로 서브페이지와 메인페이지를 분리한다.
-function App() {
-  return (
-    <Router>
-      <Switch>
-          <Route path="/" component={Home} exact/>
-          <Route path="About" component={About} exact/>
-      </Switch>
-    </Router>
-  );
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.onMouseEnter = this.onMouseEnter.bind(this);
+    this.onMouseLeave = this.onMouseLeave.bind(this);
+    this.state = {
+      dropdownOpen: false
+    };
+  }
+
+  toggle() {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
+  }
+
+  onMouseEnter() {
+    this.setState({dropdownOpen: true});
+  }
+
+  onMouseLeave() {
+    this.setState({dropdownOpen: false});
+  }
+
+  render() {
+    return (
+      <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave} isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+        <DropdownToggle caret>
+          Dropdown
+        </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem header>Header</DropdownItem>
+          <DropdownItem disabled>Action</DropdownItem>
+          <DropdownItem>Another Action</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>Another Action</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+    );
+  }
 }
-
-export default App;
-

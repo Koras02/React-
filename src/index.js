@@ -1,13 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-// import App from './App';
-import Home from './components/Home';
- 
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import Dropdown from './dropdownmenu/Dropdown';
+import { Container } from 'reactstrap'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
- 
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: 'React'
+    };
+  }
+
+
+render() {
+   return (
+     <Container>
+       <Dropdown />
+     </Container>
+    );
+  }
+}
+
+render(<App />, document.getElementById('root'));
