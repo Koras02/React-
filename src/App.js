@@ -18,7 +18,7 @@ export class App extends React.Component {
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about-us">Contact Us</Nav.Link>
               </Nav>
-            </Navbar.Collapse>
+            </Navbar.Collapse>s
             </Navbar>
           </Router>
           </div>  
