@@ -58,3 +58,13 @@
   margin: 0 auto;
   padding: 40px;
 }
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+* > body {
+  margin: 0;
+  box-sizing: border-box;
+}

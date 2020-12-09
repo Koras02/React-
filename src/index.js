@@ -1,24 +1,11 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Dropdown from './dropdownmenu/Dropdown';
-import { Container } from 'reactstrap'
+import React from 'react'
+import ReactDOM from 'react-dom';
+import App from "./App";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
-  }
-
-
-render() {
-   return (
-     <Container>
-       <Dropdown />
-     </Container>
-    );
-  }
-}
-
-render(<App />, document.getElementById('root'));
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+    <React.StrictMode>
+      <App />
+     </React.StrictMode>,
+      rootElement
+);

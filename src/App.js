@@ -1,46 +1,29 @@
-import React from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import React from 'react'
+import { BrowserRouter as Router,Switch,Route,useParams,} from 'react-router-dom';
+import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props);
+export class App extends React.Component {
 
-    this.toggle = this.toggle.bind(this);
-    this.onMouseEnter = this.onMouseEnter.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
-    this.state = {
-      dropdownOpen: false
-    };
-  }
-
-  toggle() {
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen
-    }));
-  }
-
-  onMouseEnter() {
-    this.setState({dropdownOpen: true});
-  }
-
-  onMouseLeave() {
-    this.setState({dropdownOpen: false});
-  }
-
-  render() {
+  render(){
     return (
-      <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave} isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-        <DropdownToggle caret>
-          Dropdown
-        </DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem header>Header</DropdownItem>
-          <DropdownItem disabled>Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>Another Action</DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
-    );
-  }
-}
+      <div>
+         <div className="row">
+          <div className="col-md-12">
+          <Router>
+            <Navbar bg="dark" variant="dark" extend="lg" sticky="top">
+              <Navbar.Brand href="#home">React Bootstrap Navbar</Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="mr-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/about-us">Contact Us</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+            </Navbar>
+          </Router>
+          </div>  
+        </div> 
+      </div>
+    )
+  
+export default App;

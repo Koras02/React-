@@ -14,7 +14,7 @@ export default function Dropdown() {
         setSelectedOption(value);
         setIsOpen(false);
         console.log(selectedOption);
-    };s
+    };
 
     return (
         <Main>
