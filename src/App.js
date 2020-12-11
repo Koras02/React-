@@ -1,29 +1,15 @@
-import React from 'react'
-import { BrowserRouter as Router,Switch,Route,useParams,} from 'react-router-dom';
-import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
+import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/HomePage/Home';
 
-export class App extends React.Component {
-
-  render(){
+function App() {  
     return (
-      <div>
-         <div className="row">
-          <div className="col-md-12">
-          <Router>
-            <Navbar bg="dark" variant="dark" extend="lg" sticky="top">
-              <Navbar.Brand href="#home">React Bootstrap Navbar</Navbar.Brand>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/about-us">Contact Us</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>s
-            </Navbar>
-          </Router>
-          </div>  
-        </div> 
-      </div>
+        <Router>
+            <Switch>
+                <Route path='/' exact component={Home}/>
+            </Switch>
+        </Router>
     )
-  
-export default App;
+}
+
+export default App
