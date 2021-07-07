@@ -1,20 +1,29 @@
+import React from 'react'
+import { BrowserRouter as Router,Switch,Route,useParams,} from 'react-router-dom';
+import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
 
-import React from 'react';
-import './App.css';
-import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';  // 
-import Home from './components/Home';
+export class App extends React.Component {
 
-// 웹의 서브페이지 라우팅을 하기위한 js파일이다.이곳에서 path 값으로 서브페이지와 메인페이지를 분리한다.
-function App() {
-  return (
-    <Router>
-      <Switch>
-          <Route path="/" component={Home} exact/>
-          <Route path="About" component={About} exact/>
-      </Switch>
-    </Router>
-  );
-}
-
+  render(){
+    return (
+      <div>
+         <div className="row">
+          <div className="col-md-12">
+          <Router>
+            <Navbar bg="dark" variant="dark" extend="lg" sticky="top">
+              <Navbar.Brand href="#home">React Bootstrap Navbar</Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="mr-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/about-us">Contact Us</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>s
+            </Navbar>
+          </Router>
+          </div>  
+        </div> 
+      </div>
+    )
+  
 export default App;
-
